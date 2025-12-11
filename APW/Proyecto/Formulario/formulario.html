@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8"
+            <meta name="Author" content="Pedro">
+            <meta name="Description" content="Página web con estructura de HTML5, sobre formularios">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .parrafo-formulario{
+                font-size: 15px;
+                margin: 10px;
+                padding: 10px;
+            }
+            input, textarea{
+                margin: 5px;
+                padding: 10px;
+            }
+            .datos-personales{
+                box-sizing: border-box;
+                background-color: rgb(177, 238, 230)
+            }
+
+            .body{
+            font-family: Arial, sans-serif;
+            background-color: rgb(141, 137, 137); 
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            }
+
+        form {
+            background: rgb(255, 255, 255);
+            padding: 30px;
+            border-radius: 6px;
+            width: 100vw;
+            max-width: 70vw;
+        }
+
+/* Estiqutas */
+label {
+    display: block; 
+    margin-bottom: 5px;
+    margin-top: 15px; 
+    font-weight: bold;
+    color: rgb(71, 67, 67);
+}
+
+/*CSS de Inputs, Select, Textarea */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid rgb(119, 116, 88);
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 16px;
+}
+
+/* Efecto al enfocar (solo un cambio de color simple) */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: rgb(0, 153, 255);
+    outline: none;
+}
+
+/* 4. Estilo del Botón de Envío */
+input[type="submit"],
+button[type="submit"] {
+    background-color: rgb(42, 106, 148)
+    ;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%; 
+}
+
+/* Efecto del hover para botones*/
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: rgb(16, 196, 209);
+}
+        </style>
+        </head>
+        <body>
+            
+            <div class="datos-personales">
+                <legend>Datos personales</legend>
+                <form method="POST" id="Contacto">
+                <div>
+                
+                    <label class="parrafo-formulario" for="name">Tu Nombre:</label><br>
+                    <input type="text" id="nombre" name="usuario_nombre" required><br>
+                </div>
+                <div>
+                    <label class="parrafo-formulario" for="msg">Mensaje:</label><br>
+                    <textarea id="msg" name="usuario_mensaje"></textarea><br><br>
+                </div>
+                <div>
+                    <label class="parrafo-formulario" for="pass">Escribe tu contraseña</label><br>
+                    <input type="password" id="pass" name="contraseña">
+                </div>
+                <div>
+                    <label class="parrafo-formulario" for="country">País:</label>
+                    <select id="country" name="usuario_pais">
+                        <option value="es">España</option>
+                        <option value="mx">Portugal</option>
+                        <option value="ar">Andorra</option>
+                        <option value="ar">Francia</option>
+                        <option value="ar">Italia</option>
+                        <option value="ar">Alemania</option>
+                        <option value="ar">Grecia</option>
+                    </select><br><br>
+                </div>
+                <div>
+                    <label for="user_email">Correo Electrónico:</label>
+                    <input type="email" id="user_email" name="correo_electronico" placeholder="ejemplo@dominio.com"required
+                    
+                </div>
+                <div>
+                    <label class="parrafo-formulario"for="volumen">Volumen (0-100):</label><br>
+                        <input type="range" id="volumen" name="nivel_volumen" min="0" max="100" value="50">
+                </div>
+                <div>
+                    <label class="parrafo-formulario"for="color_inicial">Elige tu color:</label><br>
+                    <input type="color" id="color_inicial" name="color_inicial" value="#0000FF">
+                </div>
+                <div>
+                    <label class="parrafo-formulario"for="fecha">Dime la fecha a la que se enviara</label><br>
+                    <input type="date" id="fecha_hoy" name="fechat_hoy">
+                </div>
+                <button type="submit">Enviar Formulario</button>
+            </form>
+
+            </div>
+            <button onclick="window.alert('¡Buenos dias!')"> 
+                Saluda
+
+            </button>
+            <button onclick="document.write('Te has cargado el documento animal')"> Saludo con write</button>
+            <button onclick="console.log('Hola, este saludo esta hecho con console.log')">Saludo con log</button>
+            <!--<button onclick="()">
+                Nombre
+            </button>-->
+            <script>
+                const formulario = document.getElementById('contacto')
+            </script>
+
+        </body>
+
+    </html>

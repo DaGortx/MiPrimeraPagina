@@ -1,0 +1,143 @@
+/* Estilos generales */
+
+:root {
+    --color-fondo: #f4f7f8;
+    --color-texto: #333;
+    --color-primario: #007bff; /* Azul vibrante */
+    --color-sombra: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    padding: 20px;
+}
+
+/*  CCS encabezado  */
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--color-sombra);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: 300;
+}
+
+/* Main CSS */
+
+main {
+    display: grid;
+    /* Para pantallas grandes, 2 columnas */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tarjetas de las IA */
+
+.ia-card {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--color-sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Estilo por defecto */
+    background-color: #ffffff; 
+}
+
+.ia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.ia-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.ia-card p {
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    color: #444;
+}
+
+.ia-card ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.9em;
+}
+
+.ia-card ul li {
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.ia-card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/*  Colores de las tarjetas de las IA */
+
+.gemini {
+    border-left: 5px solid #ff6f00; /* Naranja/Amarillo (Google) */
+}
+.gemini h2 { color: #ff6f00; }
+.gemini ul li::before { color: #ff6f00; }
+
+.deepseek {
+    border-left: 5px solid #28a745; /* Verde */
+}
+.deepseek h2 { color: #28a745; }
+.deepseek ul li::before { color: #28a745; }
+
+.chatgpt {
+    border-left: 5px solid #17a2b8; /* Cyan/Turquesa (OpenAI) */
+}
+.chatgpt h2 { color: #17a2b8; }
+.chatgpt ul li::before { color: #17a2b8; }
+
+.copilot {
+    border-left: 5px solid #6f42c1; /* Púrpura (Microsoft/GitHub) */
+}
+.copilot h2 { color: #6f42c1; }
+.copilot ul li::before { color: #6f42c1; }
+
+
+/* Pie de Página */
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #999;
+    font-size: 0.85em;
+    border-top: 1px solid #e0e0e0;
+}
+    

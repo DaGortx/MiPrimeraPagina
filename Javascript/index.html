@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Pedro">
+    <meta name="description" contenct="Mi primer JavaScript">
+    <title>Primer JavaScript</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding:0px;
+        }
+        button{
+            width: 15v;
+            height: 10vh;
+            border-radius: 30%;
+            cursor: crosshair;
+        }
+        img{
+            width: 50vw;
+            height:auto;
+        }
+        .imagenes-botones{
+            width: 5vw;
+            height: auto;
+        }
+        .background-rosa{
+            color: red;
+            background-color:rgba(rgba(209, 14, 216, 0.815));
+            font-size: 18px;}
+        .parrafo1{
+            color:yellow;
+            font-style: oblique;
+        }
+        #Darkmode{
+            background-color: rgba(161, 30, 129, 0.938);
+        }
+        #Lightmode{
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio Javascript</h1>
+    <!--Boton que al pusarlo cambia el texto-->
+    <button onclick="document.getElementById('Saludo').innerHTML = 'Hoy vamos a hacer ejercicios de Javascriptt'">
+        Hola Mundo
+
+    </button>
+    <p id="Saludo">
+        Hola buenos dias
+    </p>
+    <!--Botones y demas que cambiaran la imagen-->
+    <img id="Cara" src="img-js/1f610.png" alt="Cara con diferentes expresiones que varian con un boton"> <br>
+    <img id="Cara triste" src="img-js/image.png" alt="PLEASE SPEED I NEED THIS" hidden>
+    <img id="Cara feliz" src="img-js/feliz.png" hidden>
+    
+    <button onclick="document.getElementById('Cara').src = 'img-js/feliz.png'">
+        Cara Feliz
+    </button>
+    <button onclick="document.getElementById('Cara').src = 'img-js/image.png'">
+        Cara Triste
+    </button>
+    <button onclick="document.getElementById('Cara').src = 'img-js/1f610.png'">
+        Cara neutra
+    </button> <br>
+    <!--Poner modo oscuro y claro-->
+    <button onclick="
+    document.body.style.backgroundColor = 'grey'; 
+    document.body.style.color='white'; 
+    document.getElementById('luna').hidden = true ;">
+        <img class="imagenes-botones" src="img-js/luna.png" alt="Dark Mode">
+    </button>
+    <button 
+    onclick="
+    document.body.style.backgroundColor = 'white'; 
+    document.body.style.color='black';">
+        <img class="imagenes-botones" src="img-js/lightmode.jpg" alt="Dark Mode">
+    </button> <br>
+    <!--Muestra botones para ocultar y mostrar un arbol-->
+    <img id="Cerezo" src="img-js/cerezoenflor.jpg" alt="Cerezos en flor">
+
+    <button onclick="document.getElementById('Cerezo').style.display = 'none'">
+        Ocultar Cerezos
+    </button> 
+    <button onclick="document.getElementById('Cerezo').style.display = 'block'">
+        Mostrar Cerezos
+    </button> 
+
+    
+    <script>
+        
+    </script>
+    <p> 
+        El DOM (Document Object Model, Modelo de Objetos del Documento) es una interfaz de programación que representa el contenido de una página web (HTML o XML) como una estructura de árbol de objetos. Funciona como un puente entre el código de un documento y el script que se está ejecutando, permitiendo que el código manipule el contenido, la estructura y el estilo de la página en tiempo real, como por ejemplo, para modificar elementos, añadir o eliminar contenido, y responder a eventos del usuario. 
+    </p>
+    <p>
+        JavaScript (JS) es un lenguaje de programación de alto nivel que se utiliza principalmente para hacer las páginas web interactivas y dinámicas. Permite crear funciones como actualizar contenido de redes sociales, mostrar animaciones, validar formularios y responder a la interacción del usuario, como clics y movimientos del ratón. A pesar de llamarse así, no debe confundirse con el lenguaje Java, y se usa tanto en el navegador (frontend) como en servidores (backend). 
+
+    </p>
+        <!-- En lugar de ocultar con hidden, lo voy a ocultar con display-->
+        <!--añadir un botonque transforme todos los p en color rojo y 16-->
+    <button>
+        
+    </button><br>
+    
+    <img id="ArbolNavidad" src="img-js/arbolnavidad.png" alt="Cerezos en flor"> <br>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="es"&gt;
+        &lt;body&gt;
+            &lt;h1titulo bonico/h1&gt;
+        &lt;/body&gt;
+    &lt;/html&gt; <br>
+    <button onclick="cambiarEstilosGlobales()">Cambia el aspecto de todos los párrafos</button>
+
+    <button onclick="
+    
+    /*
+    document.getElementsByTagName('p')[0].style.color='green';
+    document.getElementsByTagName('p')[0].style.fontSize='20px';
+    document.getElementsByTagName('p')[0].style.fontWeight='bold';
+    document.getElementsByTagName('p')[0].style.fontStyle='italic';*/
+    
+    /*Declaro la constanto parrafo0*/
+    const parrafo0 = document.getElementsByTagName('p')[0];
+    parrafo0.style.color = 'green';
+    parrafo0.style.fontSize = '20px';
+    parrafo0.style.fontWeight = 'bold';
+    parrafo0.style.fontStyle = 'italic';
+    document.getElementsByTagName('p')[1].className='background-rosa';
+    document.getElementsByTanName('p')[1].classList.add('background-rosa')">
+        Cambia el aspecto del primer párrafo
+    </button>
+    <p id="parrafo-a-cambiar"> Este sera el parrafo que cambiara</p>
+<script>
+function cambiarEstilosGlobales() {
+// Selecciona TODOS los elementos <p> y los guarda en una lista (NodeList)
+const parrafos = document.querySelectorAll('p');
+
+// Itera sobre cada elemento individualmente para aplicar los estilos
+parrafos.forEach(parrafo => {
+parrafo.style.color = 'blue';
+parrafo.style.fontSize = '15px';
+parrafo.style.fontWeight = 'bold';
+parrafo.style.fontStyle = 'italic';
+});
+}
+
+</script>
+</body> 
+</html>
